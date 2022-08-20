@@ -1,0 +1,42 @@
+4 formas basicas de Função em Js:
+-- Não Recebem param e retorna
+-- Recebem param e não retorna
+-- Recebem param e retorna
+-- Não Recebem param e Não retorna
+
+
+//Function Expression
+--função dentro de uma variavel
+ex: const a = function(){...}
+
+const soma = function(a,b){
+return a + b
+}
+
+const anotherSum = sum
+anotherSum(5,7) //funciona e da 12
+
+//Anonymus Function
+--colocando função dentro de () torna ela anonima
+ex: (function(){...})
+
+//Function Arrow
+--Sempre anonima
+const b = () => {}
+--forma enxuta, caso haja apenas uma variavel e/ou linha de execução
+const enx = a => a + 1
+
+
+//
+IIFE - Immediately Invoked Function Expression
+ex:
+(function(a,b){})(a,b)
+--Se não passar parametros funciona do mesmo jeito
+(() => console.log("função oculta")()
+
+
+ * Se passar + params a função ignora, se passar menos a var fica como undefined *
+func( params = default)
+ 
+ //Spread/Rest
+ func a(...n){ //n vai receber uma quantid variada de params

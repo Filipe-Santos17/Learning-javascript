@@ -1,0 +1,18 @@
+# INTRODUÇÃO
+
+Projeto criado com Vite:
+--yarn create vite
+--uso de typescript e styled-components
+
+Requisitos:
+--NodeJs
+--VsCode (Editor)
+--Google Chrome (Navegador)
+
+O q é o React:
+--Biblioteca Js para criação de Interfaces
+--Feito para criar SPAs(Single Page Application - 1 html que altera o contéudo com Js)
+--Baseado totalmente em components
+--JSX(Javascript Extended) para renderizar HTML5
+--Utiliza o Virtual DOM para fazer alterações no DOM
+--Pode ser utilizado por completo ou adicionado com CDN para otimizar o site
