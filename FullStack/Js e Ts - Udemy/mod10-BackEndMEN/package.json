@@ -1,0 +1,12 @@
+{
+  "name": "mod10-backendmen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "4-ListArquivosFs.js",
+  "scripts": {
+    "test": "nodemon 6-express.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+//Comentário simples de uma linha
+console.log("Hello World")
+
+// console.log("Comentarios") - Codígo ignorado
+
+/**
+ * Comentário de Linhas longas
+ * Não executado
+ * // Esse comentário também está comentado
+ */
+

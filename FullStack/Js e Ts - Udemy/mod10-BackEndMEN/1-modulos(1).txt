@@ -1,0 +1,33 @@
+const nome = "Filipe",
+sobrenome = "Miranda"
+
+const falaNome = () => nome + ' ' + sobrenome //return implicito
+
+module.exports.nome = nome //importe nome como nome
+exports.sobrenome = sobrenome //tudo é module enão funciona - module é objeto
+exports.falaNome = falaNome
+
+/* Resp:
+{
+  nome: 'Filipe',
+  sobrenome: 'Miranda',
+  falaNome: [Function: falaNome]
+}
+*/
+
+console.log(module.exports)
+
+/* //Em outro arquivo
+
+const {nome, sobrenome, falaNome} = require("./modulos1.js") //() não podem ter em nome de arquivo
+//ou 
+const modulo1 = require("./modulos1.js").falaNome() //já que fala nome é uma função
+//ou
+const moduloo1 = require("./modulos1.js")
+const x = moduloo1.falaNome() 
+
+*/
+
+//Se estiver na node_modules não se precisa definir o caminho
+//ex: npm i axios
+const axios = require("axios")//pois é um programa da node_modules

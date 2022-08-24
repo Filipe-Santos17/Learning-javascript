@@ -1,0 +1,9 @@
+
+//__filername = nome do arquivo atual
+//__dirname = nome do diretorio atual
+
+const path = require("path")
+console.log(__dirname)
+console.log(path.resolve(__dirname,"..","..","nomeDaPasta"))
+//nomeDaPasta = entre nessa pasta
+//.. = volte um caminho

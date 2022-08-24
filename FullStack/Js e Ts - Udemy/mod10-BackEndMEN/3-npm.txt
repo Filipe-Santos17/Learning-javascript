@@ -1,0 +1,42 @@
+// npm init = cria o ambiente de desenvolvimento node
+// npm init -y = cria o ambiente e responde o form de desenvolvimento node automaticamente
+
+// npm i programa = realiza a instalação do modulo, ex:
+npm i express
+
+//npm i programa@versao = realiza a instalação do modulo e a sua versão, ex:
+npm i express@4.5.0
+
+/*
+
+versão = major. minor. patch
+--major = versão nova, pode haver quebra em programas antigos se atualizar
+ex: react-router-dom não funciona os comandos do 5.0.0 na 6.0.0
+--minor = adicionou recurso novo
+--patch = correção de bugs
+
+^ = altera a minor e a patch
+~ = altera apenas a patch
+se não tiver nada fica estastíco
+
+*/
+
+// npm i progama --save-dev ou -D = instala somente como dev-dependencie
+
+// npm i progama@4.x = instala a ultima versão da major 4
+
+// npm update = atualiza todos os programas do package para sua ultima versão
+
+// npm uninstall programa = remove o programa 
+
+// npm ls = lista todas as dependências e sua sub dependências
+// npm ls --depth=0  = lista apenas as dependências
+// npm ls --depth=x  = lista as dependências e x casas de suas sub dependências
+
+/*
+npm outdated 
+--informa a 
+º current = versão atual
+º wanted = versão que poderia atualizar com update
+º latest = ultima versão
+*/

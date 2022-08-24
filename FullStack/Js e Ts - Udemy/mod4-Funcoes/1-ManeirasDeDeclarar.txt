@@ -1,0 +1,42 @@
+//Funções são objetos de primeira classe
+
+//Declaração de função
+function Hello(){
+    console.log("Hello World")
+}
+
+Hello()
+
+//Function Expression
+const dado = function(){
+    console.log("Função do dado")
+}
+
+function execF(fn){
+    console.log("Função Executada")
+    fn()
+}
+
+execF(dado)// não se pode colocar ()
+
+//Arrow Function
+const ArrowF = () => {
+    console.log("Arrow")
+    //This muda
+}
+
+ArrowF()
+
+//Dentro de um obj - vira metodo
+const objF = {
+    falar: function(){
+        console.log('Função falada no objeto')
+    },
+
+    dizer(){ //Metodo mais novo e já permitido
+        console.log('Função dita no objeto')
+    }
+}
+
+objF.falar()
+objF.dizer()

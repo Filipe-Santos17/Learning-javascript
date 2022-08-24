@@ -1,0 +1,27 @@
+Ps: Tudo isso deve ser feito no terminal do Git
+
+1º Passo : Instale o Git
+--Instalação padrão
+
+2º Passo:
+>> ssh-keygen
+--o windows irá sugerir um nome padrão, pode deixar se quiser ou não
+--senha se quiser
+
+-Toda vez que ligar a maquina windows faça:
+>> eval $(ssh-agent)
+-- se aparecer uma saida como 'agent pid numeroQualquer', deu tudo certo
+>> ssh-add ~/.ssh/nomeDoSsh(criado no 2º Passo)
+--mensagem de retorno => ' Identity added: caminho da chave '
+>> start ~/.ssh
+-- abre o explorer na pasta das ssh
+-- copie a chave ssh do arquivo.pub
+
+3º Passo:
+--Adiciona a chave ssh no Google Platarforms
+
+4º Passo: acesso
+ssh 'IpDoServidor ou nomeDoUsuario@IpDoServidor'
+--Acesso concluido ao terminal da maquina Google
+--Se atualizar o servidor ele irá dar um reboot
+--ping IpDoServidor (Para saber se ele está on ou não)

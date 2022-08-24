@@ -1,0 +1,51 @@
+function params(){ //arguments - não funciona em arrows, apenas funções definidas com a palavra function
+    console.log("Função que não tem argumentos")
+    console.log(arguments[0]) //Mesmo sem esperar argumentos a função ainda pode receber e tratar os dados
+}
+
+params('Sem argumentos mas funciona')
+
+//Permite por exemplo
+function somart(){
+    total = 0
+    for (let argument of arguments){
+        total += argument 
+    }
+    console.log(total)
+}
+
+somart(1,2,4,57,34,3,89)
+
+//quando os argumentos sustentam a função
+function somara(a, b = 2, c = 4){ //Valor padrão, apenas funciona se receber undefined, null seria = a 0 - Metodo Novo
+    //a = a || 0 // Verifica se tem valor ou se torna 0 - Metodo Antigo
+    console.log(a + b)
+}
+
+somara(2,'') //daria NaN - Not a Number, pois o b seria undefined, se não estiver definido
+
+//Desestruturando obj e Array
+function destr({nome,sobrenome,idade}){ //Para ser Array troque {} por []
+    console.log(nome,sobrenome,idade)
+}
+
+let obj = {nome:"Filipe",sobrenome:"Marques",idade:20}
+let array = ["Filipe","Marques",20] 
+destr(obj)
+
+function calculator(operador, total, ...valores){ //Rest Operator(operador de resto) é um array
+    //Rest operator, deve ser sempre o ultimo param da função
+    let tot = total
+    valores.map(item => {
+        if (operador === '+') tot += item
+        if (operador === '-') tot -= item
+        if (operador === '/') tot /= item
+        if (operador === '*') tot *= item
+    })
+    console.log(tot)
+}
+
+calculator('+',0,20,30,50)
+calculator('-',500,20,30,50)
+calculator('/',5,20,30,50)
+calculator('*',0,20,30,50)

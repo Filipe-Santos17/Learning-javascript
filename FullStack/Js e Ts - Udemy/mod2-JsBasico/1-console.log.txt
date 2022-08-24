@@ -1,0 +1,7 @@
+console.log() = escrita/resposta no javascript
+'', "" ou ``, sendo a ultima a template string
+Nota: aspas simples não podem ficar entre aspas simples pois causa separação, apenas duplas
+- Js é dinâmico, então string é tudo entre "",'' ou `` e number é todo numero independe de ser natural ou inteiro
+
+console.log("Meu nome é " + nome + ". e eu estou aprendendo Js as 15 da tarde")
+console.log(`Meu nome é  ${nome}. e eu estou aprendendo Js as 15 da tarde`) //Ainda não ensinado

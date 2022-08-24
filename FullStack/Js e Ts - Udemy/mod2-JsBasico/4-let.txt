@@ -1,0 +1,21 @@
+/*
+ *let = criar uma variavel no programa
+ *let nomeVariavel = contéudo
+ *ex:
+**/
+
+let nome = 'filipe'; //string
+
+console.log(nome, 'nasceu em 2002');
+
+let valor //esta declarada mas não recebeu valor
+
+valor = 25 //agora atribuiu valor
+
+console.log(valor)//Será undefined se não atribuir valor
+
+// let valor - redlecarar variavel cria um erro no codígo
+// apenas coloque ' variavelNome = valorNovo ', excet em const
+// Não se pode criar variáveis com palavras reservadas, ex: let console, var if
+// Cada variavel deve ter um nome que fale por si só/AutoExplicativa
+// Dica: sempre começe variavel com letra minuscula, não com numero nem com espaços e traços(apenas _), e CaseSensitive - letras minusculas e maiusculas fazem diferença

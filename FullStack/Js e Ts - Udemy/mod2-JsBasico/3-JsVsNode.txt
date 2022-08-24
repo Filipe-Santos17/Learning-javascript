@@ -1,0 +1,15 @@
+//Inserindo Js no HTML
+
+html:5 // faz a criação do html basíco no VsCode
+
+<script>
+    dentro desse bloco deve ficar os codigos javascript
+</script>
+
+//Má pratíca colocar dentro do head pois o navegador irá tentar executar o js antes de criar a pagína, se possivel, coloque no final do body
+
+ctrl + u = exibe o codígo, comentaríos js também serão exibidos
+
+// <script src=""></script> - defina o caminho do codigo js para ser executado
+
+//No front o js serve para manipular o dom e os serviços do navegador, no back é para estrutura, por isso modulos do front não tem no back e vice versa

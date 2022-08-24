@@ -1,0 +1,10 @@
+//Const deve ser criada e atribuir seu valor ao mesmo tempo
+const nome = 20;//Não deve ser alterado o valor de uma constante 
+//valor de const pode ser usados em outras variaveis
+
+/**
+ * Dica de VsCode
+ * KeyBoard Shortcuts[ctrl + k, ctrl + s ] - move line down/up [alt + DownArrow/UpArrow]
+ */
+
+console.log(typeof(nome)) // indica o tipo da variavel, em Js Text = String e Numero(todos) = Number

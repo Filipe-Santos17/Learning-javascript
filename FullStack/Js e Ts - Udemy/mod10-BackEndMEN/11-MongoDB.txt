@@ -1,0 +1,18 @@
+/*
+ *1º Passo: Acessar mongodb atlas;
+ *2º Passo: Crie uma conta
+ *3º Passo: Escolha a opção de cluster gratuito(Deixe as opções default - Amazon e N.virginia)
+ *4º Passo: Depois de finalizado o Cluster/Servidor, add new user e crie um usario e senha como atlas addmin
+ *5º Passo: Em clusters aperte connect e copie o link de usuario e a senha
+ */
+
+//Depois de realizar a conexão, faça o download do mongoose e dotenv
+
+//--> npm i dotenv mongoose
+
+const mongoose = require("mongoose")
+const dotenv = require("dotenv")
+
+const connectionString = "url da Conexão "
+
+mongoose.connect()

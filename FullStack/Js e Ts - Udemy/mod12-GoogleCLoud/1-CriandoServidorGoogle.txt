@@ -1,0 +1,18 @@
+1º Passo fazer o cadastro no Google Cloud
+--Pede dados importantes como cartão de credito
+
+2º Passo: procure Computer Engine e acesse criar uma instância
+--Escolha o tamanho da memoria(3,75gb ou menos )
+--Escolha sistema operacional(Para produção recomenda-se Debian LTS, mas Ubuntu também serve)
+--Tamanho de 10GB e disco permanente padrão
+--Escopo de acesso: permitir acesso padrão
+--Firewall: Habilite as opções - ' permitir tráfego na porta Http/Https ' (Se não marcada não permite o deploy)
+--Crie a maquina(tem um btn final com essa frase)
+
+3º Redirecinando o subdominio para Google : deve ser feito no seu (ex: cloudflare)
+--ps: ip deve ser estástico(se não muda a cada reinicio da maquina)
+
+- :(3 pontos) -> ver detalhes da rede -> alterar tipo de dinâmico para estástico
+ps: o serviço gratuito permite apenas um ip estástico
+ps: Se não funcionar resete a maquina
+ps: O endereço aparece em Ip Externo

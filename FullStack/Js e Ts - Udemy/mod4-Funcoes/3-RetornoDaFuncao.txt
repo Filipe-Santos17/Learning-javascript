@@ -1,0 +1,35 @@
+//Há funções que retornam e as que não retornam mas cumprem um ação
+
+//ex não retorna:
+//const all = document.body
+//all.addEventListener('click', function(){
+//    document.body.style.backgroundColor = "blue";
+//}) //isso funciona somente no chrome
+
+//Ex Retorna:
+function criarObj(nome,sobrenome){
+    return {nome, sobrenome}
+}
+
+const p1 = criarObj('Luiz','Marques')
+const p2 = {
+    nome: 'Filipe',
+    sobrenome: 'Marques'
+}
+
+console.log(p1, typeof p1) //ambos são objetos
+console.log(p2, typeof p2) //ambos são objetos
+
+
+function criaMultiplicador(multi){
+    return function(n){
+        return n * multi
+    }
+}
+
+const duplica = criaMultiplicador(2)
+//const triplica = criaMultiplicador(3)
+//const quadriplica = criaMultiplicador(4)
+
+console.log(duplica(4))
+console.log(criaMultiplicador(3)(4))//pra mim assim é mais facil

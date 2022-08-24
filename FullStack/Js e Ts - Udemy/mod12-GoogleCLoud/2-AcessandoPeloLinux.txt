@@ -1,0 +1,19 @@
+Modelo: Ubuntu-18.04 LTS
+--Deve funcionar em qualquer Linux/Mac
+--como: chaves ssh parecidas permitem contato com o terminal da maquina Google
+
+1º Passo - Gerar chave ssh:
+>> ssh-keygen -f ~/.ssh/NomeDaChave -t rsa -b 4096
+--Crie uma senha(enter pra sem senha)
+--ls ~/.ssh/ = confirma se as chaves existem
+--Deve haver 2 arquivos " NomeDaChave " " NomeDaChave.pub "
+>> cat /caminho da chave ou /Nome Do Arquivo
+--Copie toda a chave 
+
+2º Passo - Metadados -> Chaves SSH:
+--Crie uma nova chave e addicione o que copiou
+--Copie o ip do servidor
+>> ssh nomeDoUsuario@IpDoServidor (Ambas informações são dadas pela Google)
+-- yes
+
+3º Passo - Acabou de entrar no terminal do Servidor da Maquina Google

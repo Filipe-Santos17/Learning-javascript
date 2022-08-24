@@ -1,0 +1,4 @@
+//Public é o local onde deve ficar todos os arquivos estasticos do programa
+
+//Caminho para carregar os arquivos estasticos como css, js e imagens
+app.use(express.static(path.resolve()))

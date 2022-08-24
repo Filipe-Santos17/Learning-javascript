@@ -1,0 +1,16 @@
+//Função é como se fosse uma bolha - pega tudo de fora(escopo global) e de dentro dela
+//porém, não se pode usar externamente dados que foram declarados dentro de uma função
+
+let nome = "Filipe"
+
+function falar(){
+    //nome = "Marques" //se isso estiver descomentado a resp é Marques
+    return console.log(nome)
+}
+
+function FalarNome(){
+    nome = "Santos" //interfere
+    falar()
+}
+
+FalarNome()//Resp: Filipe

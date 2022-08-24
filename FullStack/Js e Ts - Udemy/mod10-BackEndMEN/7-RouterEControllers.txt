@@ -1,0 +1,14 @@
+//Arquivo: Routes.Js
+
+const router = require("express").Router()
+const nomeController = require("./rota")
+
+router.get("/", nomeController.nomeFunção)
+//Agora o trabalho da rota será apenas direcionar a url e chamar o controller especifico 
+
+//Arquivo: Controller
+module.exports = {
+    nomeFunção(req,res){
+        //Comandos
+    }
+}
