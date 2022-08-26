@@ -1,0 +1,18 @@
+Node js é um motor javascript que interpreta o codigo fora do navegador atraves da fusao entre o V8(google chrome motor) e a libuv(feita em C++)
+
+Permite utilizar o javascript no backend fora do navegador, o que torna possivel criar uma grande aplicação em apenas uma unica linguagem
+
+Baixo uso de Mémoria RAM
+Melhor aproveitamento da CPU
+Leve e suporta um numero imenso de requisições(10x mais que o php)
+NPM: uma das maiores bibliotecas de codigo aberto do mundo
+
+Grandes empresas que utilizam o Node:
+--UBER
+--Microsoft
+--NETFLIX
+--PayPal
+--ebay
+
+2º Passo: Instalar o Node e o NVM
+::Node Js Package Manager(para mais informações no Google)

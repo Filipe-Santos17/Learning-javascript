@@ -1,0 +1,9 @@
+<h1>Lista de posts</h1>
+
+<!--Renderiza e exibe os posts-->
+{{#each posts}}<!--Each significa: para cada postagem-->
+    <h1>{{titulo}}</h1>
+    <p>{{conteudo}}</p>
+    <a href="/delete/{{id}}"><button>Deletar</button></a>
+    <hr>
+{{/each}}
