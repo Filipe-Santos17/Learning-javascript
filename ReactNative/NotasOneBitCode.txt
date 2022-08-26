@@ -1,0 +1,16 @@
+React Native:
+--Framerwork criado pelo facebook, reutilizando a estrutura/motor do react para criar apps Mobile com Js
+--Necessario:
+--> Node
+--> Editor/VsCode
+--> Expo (npm i -g expo-cli && expo init my-project)
+--> scrcpy
+
+-Principais Components:
+--View = Separar um campo proprio para inserir items/Div necessaria
+--Image = Images
+--Scrollview = fazer rolagem/scrool
+--Text = Escrever texto
+--TextInput = para o Usuario inserir texto 
+--Stylesheet = estilizar
+

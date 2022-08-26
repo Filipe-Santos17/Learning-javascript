@@ -1,0 +1,11 @@
+const path = require("path") //ferramenta node, ussada para caminho para diretorios
+
+module.exports = {
+    config: path.resolve(__dirname, "database", "config", "dbConfig.js"),
+    "migrations-path": path.resolve(__dirname, "database", "migrations")
+}
+
+//yarn sequelize db:create  |--> cria o banco de dados
+//yarn sequelize migrations:create --name=name-user |--> cria a migration
+//yarn sequelize db:migrate  |--> cria a tabela da migrations
+//yarn sequelize db:migrate:undo  |--> desfaz a execução da ultima migration
