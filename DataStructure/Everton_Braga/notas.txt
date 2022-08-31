@@ -1,0 +1,9 @@
+--Use o Live Server no VsCode
+
+1º Estrutura de dados
+Array = armazena valores sequenciais e do mesmo tipo
+--no Java um array deve conter apenas valores do mesmo tipo, no Js não, pois a linguagem não é tipada
+--Todo Array começar com a posição zero
+
+2º Estrutura = Pilha
+Pilha = coleção ordenada de itens, segue o padrão LIFO, último a entrar é o primeiro a sair
