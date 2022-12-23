@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--Vue Js CDN-->
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    #app{
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"><!--Local de transformação do vuejs-->
+    <p>
+      {{hello}}
+    </p>
+    <!-- Baixe o Vue Js Devtools para melhorar o nivel do codigo -->
+    <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=pt-br">Vue Js Dev Tools</a>
+  </div>
+  <script>
+    const vm = Vue.createApp({
+      data(){
+        return {
+          hello: 'Hello World with VueJs',
+        };
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

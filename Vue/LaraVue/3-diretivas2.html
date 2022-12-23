@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretivas 2</title>
+  <!--Vue CDN-->
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    .bg-black{
+      background-color: #000;
+    }
+
+    .font-xs{
+      font-size: 1.125rem;
+    }
+
+    .text-white{
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p>{{title}}</p>
+    <ul v-for="(hero, index) in heroes">
+      <li>{{index}} - {{hero.name}} - Poderes: {{hero.poderes}}</li>
+    </ul>
+    <!--v-bind serve para passar valores a atributos de tags-->
+    <img v-bind:src="src" :alt="alt"><!--Para declarar o v-bind pode ser v-bind ou : -->
+
+    <p :class="classes">Testando classes</p>
+  </div>
+  
+  <script>
+    const vm = Vue.createApp({
+      data(){
+        return{
+          title:"Herois e Poderes",
+          heroes:[
+            {name:"Batman", poderes:"Treinamento Ninja e muito dinheiro"},
+            {name:"SuperMan", poderes:"Super Força, Invulnerabilidade, Capacidade de Voar e olhos laser"},
+            {name:"Wolverin", poderes:"Imortalidade e Ossos Indestrutiveis"},
+            {name:"Magneto", poderes:"Completo dominio sobre qualquer metal"},
+          ],
+          src:"https://via.placeholder.com/150",
+          alt:"Imagem",
+          classes:{ //Pode ser um obj, array entre outros
+            'text-white':true,
+            'bg-black':true,
+            'font-xs':false,//Não é aplicada
+          },//[{classe2:true} classe1, classe3] - também daria certo
+        }
+      }
+
+    }).mount('#app')
+  </script>
+</body>
+</html>

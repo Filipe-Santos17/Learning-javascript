@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VUE Diretivas</title>
+  <!--Vue CDN-->
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="app">
+    {{content}}
+
+    <p v-if="condition">Testando a diretiva if do Vue</p>
+    <!--Se o v-if for verdaeiro e o v-else-if também ele não é executado-->
+    <p v-else-if="condition2">Testando a diretiva v-else-if do vue</p>
+    <!--Se o primeiro for falso ou não houver o else aparece(não é inserido no DOM)-->
+    <p v-else>Testando a diretiva else do Vue</p><!--Caso o if seja verdadeiro ele não aparece-->
+
+    <template v-if="templateShow"><!--Mas o v-if pode fazer aparecer-->
+      <!--No entanto o v-show não funciona na tag template, pois se true ou false o resultado continua escondido-->
+      <!--Resumindo, o que está dentro do template fica escondido mas no DOM, se o v-if for verdadeiro a tag template some e tudo dentro aparece, se não não aparece no DOM-->
+      <div>
+        {{templ}}
+      </div>
+    </template>
+  </div>
+
+  
+</body>
+<script>
+  const vue = Vue.createApp({
+    data(){
+      return{
+        content: "Este é um contéudo",
+        condition: true,
+        condition2: true,
+        templateShow: true,
+        templ: 'O que está dentro do template não aparece'
+      }
+    }
+  }).mount('#app')
+</script>
+</html>

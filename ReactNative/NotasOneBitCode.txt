@@ -6,6 +6,11 @@ React Native:
 --> Expo (npm i -g expo-cli && expo init my-project)
 --> scrcpy
 
+Passo a Passo:
+--> npm create-expo-app NomeDoProjeto
+--> cd NomeDoProjeto
+--> npm run start // yarn start (permite que o expo rode o seu projeto e compile atraves do seu celular)
+
 -Principais Components:
 --View = Separar um campo proprio para inserir items/Div necessaria
 --Image = Images
