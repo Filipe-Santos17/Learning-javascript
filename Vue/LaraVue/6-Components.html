@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components</title>
+  <!--Bootstrap apenas para estilização-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <!--Components são partes / codigos html reutilizaveis -->
+  <section id="app">
+    <div class="container mt-5">
+      <div class="mx-auto" style="width: 400px;">
+        <teste></teste>
+        <card></card>
+        <card2></card2>
+      </div>
+    </div>
+  </section>
+
+  <template id="card2"><!--O templare deve estar fora da div/elemento principal do vue-js(fora do app)-->
+    <!--Template não exibe nada,é um componente fanstama para ser alterado futuramente com javascript-->
+    <div class="card shadow-sm">
+      <!--template filho-->
+      <card3></card3>
+      <!--template filho-->
+      <div class="card-body">
+        <p class="card-text">{{description}}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline">Btn 1</button>
+            <button type="button" class="btn btn-sm btn-outline">Btn 2</button>
+          </div>
+          <small class="text-muted">test</small>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="card3">
+    <div>template filho dentro de um template pai</div>
+  </template>
+
+  <template id="card4">
+    <div>
+      <p class="card-text">{{description}}</p>
+    </div>
+  </template>
+  
+  <script>
+    const vm = Vue.createApp({
+      data() {
+        return {}
+      },
+    })
+    
+    vm.component('teste',{
+      data(){
+        return{}
+      },
+      template: '<div>Componente Basico</div>'
+    })
+
+    vm.component('card',{
+      data(){
+        return{
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, expedita.'
+        }
+      },//O template pode ser passado dessa forma 
+      template:`
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <card4></card4>
+            <p class="card-text">{{description}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline">Btn 1</button>
+                <button type="button" class="btn btn-sm btn-outline">Btn 2</button>
+              </div>
+              <small class="text-muted">test</small>
+            </div>
+          </div>
+        </div>
+      `
+    })
+
+    vm.component('card2',{
+      data(){
+        return{
+          description:'Descrição feita de uma forma diferente dessa vez!'
+        }
+      },
+      template: '#card2'
+    })
+
+    vm.component('card3',{
+      template:'#card3'
+    })
+
+    vm.component('card4',{
+      //Pode sim compartilhar dados entre componentes pais e filhos, mas desse jeito ta errado, por isso crie uma nova data e coloque a variavel sozinha.
+      data(){
+        return{
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, expedita.'
+        }
+      },  
+      template: '#card4'
+    })
+
+    vm.mount('#app') //Nada muda mas pode fazer desse jeito
+  </script>
+</body>
+</html>

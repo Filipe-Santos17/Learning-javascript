@@ -31,6 +31,18 @@
     <img v-bind:src="src" :alt="alt"><!--Para declarar o v-bind pode ser v-bind ou : -->
 
     <p :class="classes">Testando classes</p>
+    <p :style="{'background-color':'#0D6EFD','color':'#FFF'}">Testando Style(Css inline Metodo 1)</p>
+    <p :style="{backgroundColor:'#0D6EFD', color:'#FFF'}">Testando Style(Css inline Metodo 2)</p>
+    <p :style="style">Testando Style(Css inline Metodo 3)</p>
+    <!--Entre '' ou no padrão camel-case do javascript-->
+
+    <!--V-bind geral-->
+    <div v-bind="{id:'card','class':classes}">
+      <!-- se ficar entre '' ele apenas imprime, sem ''/"" vira variavel-->
+    </div>
+    <!--Mesmo efeito que o de cima-->
+    <div v-bind="attr"></div>
+    <div :[attrname]="attr"></div><!--Também pode ser feito dessa forma-->
   </div>
   
   <script>
@@ -51,6 +63,13 @@
             'bg-black':true,
             'font-xs':false,//Não é aplicada
           },//[{classe2:true} classe1, classe3] - também daria certo
+          style:{
+            display:['flex','se o browser não suporta ele testa o proximo','esse é o 1º na fila'],backgroundColor:'#0D6EFD', color:'#FFF',
+          },
+          attr:{
+            id:"card",
+            "class":{'text-white':true,'bg-black':true,} 
+          },
         }
       }
 

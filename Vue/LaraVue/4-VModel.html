@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue V-model</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdn.tailwindcss.com"></script><!--apenas para estilização-->
+</head>
+<body>
+  <!--Manipulação de estado, assim como faz o useState no React-->
+  <div class="app bg-gray-50">
+    <p>Meu nome é {{name}}</p>
+    <input type="text" v-model="name"><!--Escrevo aqui e a variavel acima atualiza-->
+
+    <!--Com Input Text-->
+    <div class="w-full p-24">
+      <div class="grid grid-cols-2 gap-16">
+        <div class="flex flex-col gap-4">
+          <label class="" for="">Nome</label>
+          <input type="text" class="border border-black bg-white p-2" v-model="nome">
+        </div>
+        <div class="flex flex-col gap-4">
+          <label for="">Sobrenome</label>
+          <input type="text" class="border border-black bg-white p-2" v-model="sobrenome">
+        </div>
+      </div>
+      <div class="w-full flex flex-col gap-4 mt-4">
+        <label for="">Email</label>
+        <input type="text" class="border border-black bg-white p-2" placeholder="insira seu email" v-model="email">
+      </div>
+    </div>
+
+    <!--Com Textarea-->
+    <div class="w-full px-24 flex flex-col gap-4">
+      <textarea v-model="msg" class="border border-black p-2">{{msg}}</textarea>
+      <span class="whitespace-pre-line">{{msg}}</span><!--Com esse css ele habilita a quebra de linha-->
+    </div>
+
+    <!--Com Checkbox-->
+    <div class="w-full px-24 flex flex-col gap-4">
+      <div>
+        <input v-model="esportes" id="id_natacao" value="natacao" type="checkbox">
+        <label for="id_natacao">Natação</label>
+      </div>
+      <div>
+        <input v-model="esportes" id="id_basquete" value="basquete" type="checkbox">
+        <label for="id_basquete">Basquete</label>
+      </div>
+      <div>
+        <input v-model="esportes" id="id_corrida" value="corrida" type="checkbox">
+        <label for="id_corrida">Corrida</label>
+      </div>
+      {{esportes}}
+      <!--Checkbox de multiplas escolhas, pra uma única escolha coloque o mesmo nome em ambos-->
+    </div>
+
+    <!--Com Radio-->
+    <div class="w-full px-24 flex flex-col gap-4">
+      <div>
+        <input v-model="payment" id="card_credito" value="card_credito" type="radio">
+        <label for="card_credito">Cartão de Crédito</label>
+      </div>
+      <div>
+        <input v-model="payment" id="card_debito" value="card_debito" type="radio">
+        <label for="card_debito">Cartão de Débito</label>
+      </div>
+      <div>
+        <input v-model="payment" id="boleto" value="boleto" type="radio">
+        <label for="boleto">Boleto</label>
+      </div>
+      {{payment}}
+    </div>
+
+    <!--select-->
+    <div class=" px-24 flex flex-col gap-4">
+      <label for="id_country">Estados</label>
+      <select name="country" id="id_country" v-model="country">
+        <!--Caso o value seja vazio, ele seleciona o valor do texto da Option-->
+        <!--Não deixe o value vazio, ex: value="", pois isso impede de pegar o valor do texto-->
+        <option value="bh">Bahia</option>
+        <option value="sp">São Paulo</option>
+        <option value="rj">Rio de Janeiro</option>
+      </select>
+      {{country}}
+      <label for="id_citys">Cidades</label>
+      <select id="id_citys" v-model="citys" multiple>
+        <!--Mesmo que a variavel seja uma string(''), se o select for multiple ela vira um array[]-->
+        <option>Salvador</option>
+        <option>São Paulo</option>
+        <option>Rio de Janeiro</option>
+      </select>
+      {{citys}}
+    </div>
+
+    <!--Modificadores do V-Model - existem 3-->
+    <!--lazy => v-model.lazy="var" = espera a variavel alterada perder o foco pra reagir / atrasa a reação/deixa de ser ao vivo-->
+    <!--number => v-model.number="var" = passa o valor pra number-->
+    <!--trim => v-model.trim="var" = remove os espaços vazios no inicio, meio e final do valor-->
+  </div>
+
+  <script>
+    const vm  = Vue.createApp({
+      data(){
+        return {
+          name: "Filipe",
+          //Crie uma variavel para cada campo do input
+          nome: "",
+          sobrenome:"",
+          email:"",
+          //TextArea
+          msg:"",
+          //Checkbox
+          esportes:[],
+          //Radio Button
+          payment:'',
+          //Select
+          country:'',
+          citys:'',
+        }
+      }
+    }).mount(".app")
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello Vue</title>  
+  <!--CDN para instalação-->
+  <script src="https://unpkg.com/vue@next"></script>
+  <!--Codigo Js - defer é necessário-->
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    {{nome}}
+    <form id="">
+      <input type="text" name="vue-nome" v-model="name_var" :id="id">
+      <input type="submit" value="Evento" @click.prevent="clickVue">
+    </form>
+    <p>O meu nome é: {{name_var}}(Automatico)</p>
+    <p>O meu nome é: {{nome}}(Evento)</p>
+  </div>
+</body>
+</html>

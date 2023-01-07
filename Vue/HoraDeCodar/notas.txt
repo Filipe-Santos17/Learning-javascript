@@ -1,0 +1,112 @@
+Aula 1 - Introdução:
+-O que é Vue ?
+--Um framework progressivo, baseado em componentes
+--Um dos frameworks front-end + utilizados
+--Baixa curva de aprendizado
+
+-Pré-requesitos ?
+--Conhecimento básico em Html e Css e Js(ES6)
+
+Aula 2 - Como instalar o Vue:
+-Instalação do Vue
+--Via CDN(através do script:src) e via CLI
+
+Aula 3 - Inputs e Data Binding:
+-Inputs e Data Binding
+--Data binding = possivel mudar um dado em tempo real
+
+Aula 4 - Utilizando o Vue CLI:
+-CLI do Vue
+--Recomendado para projetos maiores
+--Forma mais complexa de usar o Vue
+--Necessário utilizar o NodeJs para instalar, criar e executar
+--> Instalação: npm i -g @vue/cli
+--> Criar o Projeto: vue create <name>(Instalação pode ser automática ou manual/passo a passo)
+--Codigo css, javascript e html ficam todos dentro do mesmo arquivo
+
+Aula 5 - Criando Componentes:
+-Componentes
+--Permite dividir os componentes em partes
+--Permite reutilizar o codigo com mais facilidade
+--Todo componente fica dentro da tag template, e dentro de uma unica tag como div, section, etc..
+--Instale a extensão Vetur no VsCode
+--Coloque todos os componentes dentro da pasta componentes
+--Variaveis são declaradas no html com {{ variavel_nome }}
+--App é o componente root do codigo
+
+Aula 6 - Dados em componentes (data):
+-Dados nos componentes
+--Dados sempre ficam em data
+--Pode começar com Dados ou serem modificados ao longo do projeto
+
+Aula 7 - Entendendo os Lifecycle hooks (ciclo de vida):
+-Lyfe Cycle Hooks
+--Eventos que podem ser ativados em determinados momentos da execução do Programa
+--Ex: created - hook(função js) que dispara quando o componente é criado
+--Permite alterar o programa em etapas chaves
+
+Aula 8 - Hierarquia de componentes:
+-Hierarquia de componentes
+--É comum ter uma árvore de componentes(componentes divido em sub componentes)
+--Essa divisão é recomendada, mas pode se tornar algo complexo demais se houver muitos componentes
+
+Aula 9 - Conhecendo as diretivas (v-if, v-show, v-for):
+-Diretivas
+--Tornam a pagína mais dinâmicas
+--Variavel(is) devem estar cadastradas no data()
+--Toda diretiva do vue começa com 'v-'
+--if = aceita variaveis e exressões como: cond ? true : false
+--else = apenas pode existir embaixo de uma tag com v-if
+--v-show = similar ao if no entanto apenas esconde o componente, o if não coloca ele no DOM
+
+Aula 10 - Atributos dinâmicos:
+-Argumentos
+--Valores dinâmicos que podem ser inseridos em Diretivas e/ou Atributos
+--Diretiva para isso = v-bind que pode ser apenas :
+--Essa diretiva deve sempre estar antes do Atributo, ex: :src="variavel_vue"
+--A Variavel Vue não pode estar entre {{}} nesse caso
+
+Aula 11 - Métodos:
+-Métodos
+--Funções que seram executadas no programa
+--Todas estarão dentro de methods()
+--Pode ser ativada por condição ou evento
+--Deve ser criado a função no componente que a utiliza
+--Use sempre o this para se referenciar as variaveis
+
+Aula 12 - CSS Scoped e CSS global:
+-CSS Scoped e CSS global
+--Css pode ser dividido em duas categorias: Scoped(especifíco no componente) e Global(para todos)
+--Scoped torna mais fácil de personalizar
+--Ainda é Css, então não é magíca e pode culminar em erros
+--Adicione o atributo scoped na tag style do componente
+--O Vue adiciona um atributo data-v-codigo_aletoario
+
+Aula 13 - Renderização de listas (v-for):
+-Renderização de listas:
+--A lista(arrays) serão renderizadas por uma diretiva
+--Utiliza o v-for para extrair os dados de um array no data
+
+Aula 14 -  Eventos (@submit e @click):
+-Eventos
+--Utilizados para complementar as ações do usuário
+--Podem ser adicionados diretamente no html com v-on: ou @nomeDoEvento
+--O evento deve receber o method que será executado
+--O evento possui modificadores como: .prevent(preventDefault) / .stop / .once
+
+Aula 15 - Multiplos Eventos:
+-Multiplos Eventos
+--Os eventos podem ser separados por virgulas
+--Mais um method pode ser passado no mesmo evento
+
+Aula 16 - Reutilização de componentes:
+-Reutilização de componentes
+--Reutilização de componentes é recomendado
+--Cada componente se torna independente
+--O evento de um componente apenas funciona nele, não em outros
+
+Aula 17 - Utilizando props:
+-Passar dados com props
+--Os dados podem ser compartilhados entre componentes com props
+
+

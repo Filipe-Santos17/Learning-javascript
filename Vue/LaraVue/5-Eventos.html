@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eventos em Vue Js</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdn.tailwindcss.com"></script><!--apenas para estilização-->
+  <style>
+    p{
+      font-size: 3rem;
+    }
+  </style>
+</head>
+<body class="grid place-items-center">
+  <div id="app">
+    <div class="flex gap-8 mt-20">
+      <button type="button" v-on:click="number--">-</button><!-- v-on = evento no vue-->
+      <!-- v-on:tipo de evento -->
+      <!-- Em vez de :value="number" / v-bind utilize o v-model nesse caso, torna + dinâmico-->
+      <input v-model="number" class="w-4" type="text"/> 
+      <button type="button" @click="number++">+</button><!--@ = v-on é mais pratico -->
+    </div>
+    <div class="flex gap-8 mt-8">
+      <button type="button" @click="removeOne">-</button>
+      <input v-model="number2" class="w-4" type="text"/> 
+      <button type="button" @click="addOne(), redirect()">+</button>
+      <!-- pode ser assim @click="addOne()" - mas caso seja o event não vai ser puxado pelo vueJs, apenas se colocar assim $event, obs o $ é obrigatorio-->
+      <!--Para executar + de um metodo, ambos tiveram que estar com ()-->
+    </div>
+    <div class="flex gap-8 mt-8">
+      <button type="button" @click="removeFive(5)">-</button>
+      <input v-model="number3" class="w-8" type="text"/> 
+      <button type="button" @click="addFive(5)">+</button>
+    </div>
+    <a href="https://www.youtube.com/" @click.prevent="linkContent">Contéudo do Link</a>
+    <!--prevent impede o clique, seria como o preventDefault() padrão-->
+    <div @click="divClique"><!--esse evento não ocorre por que o de baixo tem stop-->
+      <!--Poderia colocar .self no evento acima, que o evento só irá ocorrer caso seja clicado na div-->
+      <a href="https://www.youtube.com/" @click.stop.prevent="linkClique">Contéudo do Link</a>
+      <!--meio estranho, ele parece que cancela outros eventos similares pra apenas esse acontecer, é uma forma de garantir que apenas a função seja executada-->
+      <!--Nome no Javascript seria stopPropagation-->
+      <!--Pode haver mais de um e a ordem não importa-->
+      <!--Outro modificador de Evento: .once = a função só é executada uma vez mesmo que o mesmo evento ocorra-->
+    </div>
+    <div class="flex flex-col gap-4">
+      <p>Eventos com tecla</p>
+      <input class="border border-black" type="text" @keyup="AlertKeyU">
+      <input class="border border-black" type="text" @keyup.arrow-down="AlertKeyD">
+      <!--o VueJs possui alguns encurtadores / apelidos para as teclas-->
+      <!--procure events handling na documentação:
+      arrow-up = up
+      arrow-down = down
+      escape = esc
+      -->
+    </div>
+  </div>  
+  <script>
+    const vm = Vue.createApp({
+      data(){
+        return {
+          number: 1,
+          number2:1,
+          number3:5,
+        }
+      },
+      methods:{//Aqui se localiza as funções do javascript
+        addOne($ev){//1º Param da função é sempre o evento
+          this.number2++//use this para se referenciar a uma variavel do Vuejs
+          console.log($ev)
+        },
+        removeOne(ev){//Aqui o $ não é obrigatorio, pois é apenas um paramêtro
+          if (this.number2 <= 0){
+            this.number2 == 0
+          } else {
+            this.number2--
+          }
+        },
+        redirect(){
+          console.log('Um metodo diferente que serve para redirecionar')
+        },
+        addFive(numb){//Um exemplo do trabalho com parâmetros
+          this.number3 += numb
+        },
+        removeFive(numb){
+          this.number3 -= numb
+        },
+        linkContent(){
+          alert("Cliquei")
+        },
+        linkClique(){
+          alert('cliquei no link')
+        },
+        divClique(){
+          alert('cliquei na div')
+        },
+        AlertKeyU($ev){
+          if($ev.key == 'ArrowUp'){
+            alert('Key Up')
+          }
+        },
+        AlertKeyD(){
+          alert('Key Down')
+        },
+      },
+    }).mount('#app')
+  </script>
+</body>
+</html>
